@@ -1,0 +1,97 @@
+body {
+  padding: 0; /* Supprimer les espacements intérieurs */
+  width: 100%; /* Remplir toute la largeur de la fenêtre */
+  min-height: 100vh; /* Remplir toute la hauteur de la fenêtre */
+  background-size: cover; /* Ajuster la taille de l'image pour qu'elle remplisse toute la zone */
+  background-position: center; /* Centrer l'image */
+  display: flex;
+  flex-direction: column;
+  background-image: url('th.jpg');
+}
+.titre h1{
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+  color: #e6e9ed;
+  font-size: 50px;
+  text-align: center;
+  font-family: 'Merriweather Sans', sans-serif;
+  text-transform: uppercase;
+}
+/* Style général */
+#contact {
+  background-color: #0a181a; /* Fond sombre */
+  padding: 50px;
+  color: rgb(255, 255, 255);
+  text-align: left;
+}
+
+h2 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  flex-grow: 1;
+  height: 2px;
+  background-color: white;
+  margin-left: 10px;
+}
+
+/* Conteneur des blocs */
+.contact-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Style des boîtes de contact */
+.contact-box {
+  background-color: #8cbaee; /* Couleur bleu foncé */
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  width: 30%; /* 3 blocs sur une ligne */
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+/* Icônes */
+.icon {
+  font-size: 24px;
+  color: #0c0c0c; /* Vert */
+  margin-right: 15px;
+}
+
+.contact-title {
+  color: #0a0b0a; /* Vert */
+  margin-bottom: 5px;
+}
+
+/* Réseaux sociaux */
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icons a {
+  color: rgb(3, 2, 2);
+  font-size: 20px;
+  background: rgba(230, 228, 228, 0.1);
+  padding: 10px;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #f2f3f4;
+}
+/* 📝 Texte des contacts */
+.contact-info {
+  color: rgb(15, 14, 14);
+}
+
+

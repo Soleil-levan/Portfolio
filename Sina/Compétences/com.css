@@ -1,0 +1,409 @@
+
+/* 
+   -------------------
+   Sélecteurs généraux
+   -------------------
+*/
+
+/* Réinitialisation des styles par défaut pour tous les éléments */
+* {
+    margin: 0; /* Supprimer les marges */
+    padding: 0; /* Supprimer les espacements */
+    box-sizing: border-box; /* Conserver la taille de boîte */
+
+  }
+
+  /*
+    -------------------
+    Image de font
+    -------------------
+  */
+  body {
+    padding: 0; /* Supprimer les espacements intérieurs */
+    width: 100%; /* Remplir toute la largeur de la fenêtre */
+    min-height: 100vh; /* Remplir toute la hauteur de la fenêtre */
+    background-size: cover; /* Ajuster la taille de l'image pour qu'elle remplisse toute la zone */
+    background-position: center; /* Centrer l'image */
+    display: flex;
+    flex-direction: column;
+    background-image: url('th.jpg');
+  }
+  
+  /* 
+     -------------------
+     Header
+     -------------------
+  */
+  
+  header {
+    /* Définir la couleur de fond pour le header */
+    background-color: #f5f5f5; 
+    
+    width: 100%;
+  }
+
+  
+  /* 
+     -------------------
+     Barre de navigation
+     -------------------
+  */
+  
+  nav {
+    display: flex;/* Permettre d'afficher les éléments en ligne */  
+    justify-content: space-between; /* Permettre d'aligner les éléments sur la ligne */
+    height: 50px; /* Donner une hauteur de 50px au menu */
+  }
+  
+  nav ul {
+    display: flex; 
+    list-style: none; 
+    align-items: right;
+
+    
+  }
+  
+  nav ul li {
+    /* Ajouter un espace entre les éléments de la liste dans la navigation */
+    margin-right: 20px; 
+    text-align: right;
+  }
+
+  nav ul li a {
+    text-decoration: none;/*supprimer le soulignement des liens*/
+    color: black;
+    border-bottom: 2px solid #ffffff00; 
+  }
+
+  nav ul li a:hover {
+    border-bottom: 2px solid #2314a3; 
+    transition: all 0.5s ease;
+  }
+
+  nav .profile {
+    display: flex;
+    align-items: center;
+    
+  }
+
+  nav .profile img {
+    margin-left: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%; /*arrondir les bords*/
+  }
+
+  nav .profile a {
+    margin-left: 15px;
+    font-size: 18px;
+    text-decoration: none;/*supprimer le soulignement des liens*/
+    border-bottom: 2px solid #ffffff00; /*Mettre une bordure a chaque lien*/
+    color: black;
+  }
+
+  nav .profile a:hover{
+    border-bottom: 2px solid #2314a3; /*Mettre une bordure a chaque lien*/
+    transition: all 0.5s ease;
+  }
+
+  nav .hamburger_menu {
+    display: none;
+    position: absolute;
+    z-index: 9999;
+    top: 8px;
+    right: 30px;
+    width: 40px;
+    border-radius: 50%; /*round the edges*/
+  }
+
+  /*Display*/
+  /*Only applies when the width <= 1000px*/
+  /*Responsive menu*/
+  @media screen and (max-width: 1000px) {
+    nav .hamburger_menu {
+        display: block;
+    }
+    .navbar__link {
+      top: 0;
+      left: 0;
+      position: absolute;
+      z-index: 9998;
+      background-color: rgba(236, 228, 228, 0.753);
+      backdrop-filter: blur(5px); /*blur the background*/
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: -100%;
+      transition: all 0.5s ease;
+    }
+
+    .navbar__link.mobile-menu {
+      margin-left: 0;
+      border-radius: 20px;
+      overflow: hidden;
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+  
+  }
+  
+  /* 
+     -------------------
+     Main
+     -------------------
+  */
+
+  
+  main {
+    flex: 1;
+    /* Définir la largeur maximale pour la section principale */
+    max-width: 1200px; 
+    /* Centrer la section principale horizontalement */
+    margin: 0 auto; 
+    bottom: 0%;
+  }
+
+  .titre h1{
+    margin-top: 20vh;
+    margin-bottom: 20vh;
+    color: #f6f8fb;
+    font-size: 50px;
+    text-align: center;
+    font-family: 'Merriweather Sans', sans-serif;
+    text-transform: uppercase;
+  }
+
+  .page_content {.contact-link {
+    text-align: center;      /* Centrage horizontal */
+    margin: 30px 0 10px 0;   /* Espacement haut/bas */
+  }
+  
+  .contact-link a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    border: 2px solid white;          /* Cadre visible */
+    padding: 8px 16px;                /* Espace intérieur */
+    border-radius: 25px;              /* Coins arrondis */
+    transition: all 0.3s ease;
+  }
+  
+  .contact-link a:hover {
+    background-color: white;         /* Inverse au survol */
+    color: #073566; 
+    text-decoration: none;
+  }
+  
+    width: 100%;
+    padding: 0%;
+  }
+
+  .page_content #cv{
+    text-decoration: none;/*supprimer le soulignement des liens*/
+    margin-left: 40%;
+    color: #073566; 
+    border: 2px solid #ffffff00;
+  }
+  
+
+  .page_content #cv:hover {
+    border: 1px solid #073566; 
+    transition: all 0.5s ease;
+    animation: show-letters 5s forwards;
+    color: #073566; 
+  }
+
+  @keyframes show-letters {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .page_content .text ul {
+    margin-top: 40px;
+    margin-left: 10%;
+    list-style: "- " inside;
+    font-size: 30px;
+    color: #073566; 
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: 'Secular One', sans-serif;
+  }
+  
+  .page_content .text #first {
+    margin-top: 0px;
+  }
+
+  .page_content .text p a{
+    text-decoration: none;/*supprimer le soulignement des liens*/
+    border-bottom: 2px solid #ffffff00; /*Mettre une bordure a chaque lien*/
+    color: rgb(243, 243, 246);
+  }
+
+  .page_content .text p a:hover{
+    border-bottom: 2px solid #2314a3; /*Mettre une bordure a chaque lien*/
+    transition: all 0.5s ease;
+  }
+  .page_content .text p {
+    max-width: 50%;
+    /*font-family: 'Signika Negative', sans-serif; A voir */
+    font-size: 16px;
+    /* Centrer la section principale horizontalement */
+    margin: 0 auto;
+    margin-top: 2%;
+    color: black;
+    text-transform: none;
+    font-weight: normal;
+    font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.page_content .text h2 {
+    margin-top: 30px;
+    margin-left: 20%;
+    font-size: 30px;
+}
+
+.page_content .prog_barre h4 {
+    margin-top: 30px;
+}
+
+.page_content .set_div {
+    max-width: 50%;
+    margin-left: 5%;
+    
+}
+
+.page_content .set_div h2{
+  margin-top: 5%;
+}
+
+
+.page_content .set_div p{
+  max-width: 70%;
+  margin-left: 8%;
+  font-family: 'PT Sans Narrow', sans-serif;
+}
+
+                                                                          /*Progress bare*/
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+.page_content .container .prog_barre {
+  position: relative;
+  flex: 1;
+  margin-left: 30%;  
+}
+.page_content .set_div {
+  flex: 1;
+}
+
+
+
+.class2 {
+  padding: 10px;
+}
+
+.page_content .container .prog_barre .info {
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+}
+.page_content .container .prog_barre span {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.page_content .container .prog_barre .ligne {
+  height: 5px;
+  width: 90%;
+  background: lightgrey;
+}
+
+.page_content .container .prog_barre .ligne:before{
+  content: "";
+  position: absolute;
+  height: 0.77%;
+  background: #b51039;
+}
+
+.page_content .container .prog_barre .Linux::before {
+  width: 50%;
+}
+
+.page_content .container .prog_barre .html::before{
+  width: 50%;
+}
+
+.page_content .container .prog_barre .css::before{
+  width: 40%;
+}
+
+.page_content .container .prog_barre .c::before{
+  width: 20%;
+}
+
+.page_content .container .prog_barre .python::before{
+  width: 60%;
+}
+
+.page_content .container .prog_barre .bash::before{
+  width: 20%;
+}
+
+
+  
+  
+  /* 
+     -------------------
+     Footer
+     -------------------
+  */
+  footer {
+    margin-top: 7%;
+    background-color: rgb(255, 252, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Faire en sorte que le footer remplisse toute la largeur de la page */
+  }
+
+
+  .text {
+    background-color: #a8c4dd; /* ou la couleur exacte de fond que tu veux */
+    padding: 20px;
+    border-radius: 20px; /* coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* optionnel : ombre douce */
+    margin: 20px auto;
+    max-width: 90%;
+  }
+  
+.contact-link {
+    text-align: center;      /* Centrage horizontal */
+    margin: 30px 0 10px 0;   /* Espacement haut/bas */
+  }
+  
+  .contact-link a {
+    color: #ece9e9;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'PT Sans Narrow', sans-serif;
+    border: 2px solid white;          /* Cadre visible */
+    padding: 8px 16px;                /* Espace intérieur */
+    border-radius: 25px;              /* Coins arrondis */
+    transition: all 0.3s ease;
+  }
+  
+  .contact-link a:hover {
+    background-color: white;         /* Inverse au survol */
+    color: #080809;
+    text-decoration: none;
+  }
+  
